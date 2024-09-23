@@ -1,67 +1,46 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import CarHeader from "../components/CarHeader"
 
-function CarDetails() {
-  useEffect(() => {
-    // eslint-disable-next-line no-undef
-    $(".product__details__pic__slider").owlCarousel({
-      loop: true,
-      margin: 20,
-      items: 4,
-      dots: true,
-      smartSpeed: 1200,
-      autoHeight: false,
-      autoplay: true,
-    });
 
-    // eslint-disable-next-line no-undef
-    $(".product__details__pic__slider img").on("click", function () {
-      // eslint-disable-next-line no-undef
-      var imgurl = $(this).data("imgbigurl");
-      // eslint-disable-next-line no-undef
-      var bigImg = $(".product__details__pic__item--large").attr("src");
-      if (imgurl != bigImg) {
-        // eslint-disable-next-line no-undef
-        $(".product__details__pic__item--large").attr({
-          src: imgurl,
-        });
-      }
-    });
-
-    // eslint-disable-next-line no-undef
-    $(".set-bg").each(function () {
-      // eslint-disable-next-line no-undef
-      var bg = $(this).data("setbg");
-      // eslint-disable-next-line no-undef
-      $(this).css("background-image", "url(" + bg + ")");
-    });
-  }, []);
+function NewCarLaunch() {
   return (
     <>
-      {/* Header Start */}
+    
+    
+    <section>
+
+        <CarHeader/>
+
+           {/* Header Start */}
       <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: 900 }}>
           <h4
             className="text-white display-4 mb-4 wow fadeInDown"
             data-wow-delay="0.1s"
           >
-           Car Details
+            New Car Launches
           </h4>
           <ol
             className="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown"
             data-wow-delay="0.3s"
           >
             <li className="breadcrumb-item">
-              <Link to="/">Home</Link>
+              <Link to="/cars">Home</Link>
             </li>
 
-            <li className="breadcrumb-item active text-primary">Car Details</li>
+            <li className="breadcrumb-item active text-primary">
+            New Car Launches
+            </li>
           </ol>
         </div>
       </div>
       {/* Header End */}
-      {/* Product Details Section Begin */}
-      <section className="product-details spad">
+
+
+    </section>
+
+     {/* Product Details Section Begin */}
+     <section className="product-details spad">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-md-12">
@@ -591,7 +570,7 @@ function CarDetails() {
       </section>
       {/* Related Product Section End */}
     </>
-  );
+  )
 }
 
-export default CarDetails;
+export default NewCarLaunch

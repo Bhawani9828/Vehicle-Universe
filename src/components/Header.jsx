@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LuMousePointerClick } from "react-icons/lu"; 
+import { LuMousePointerClick } from "react-icons/lu";
 import { Link, useLocation } from "react-router-dom";
 
 function Header() {
@@ -71,73 +71,61 @@ function Header() {
   };
   return (
     <>
-    {/* Topbar Start */}
-    <div className="container-fluid topbar bg-secondary d-none d-xl-block w-100">
-      <div className="container">
-        <div className="row gx-0 align-items-center" style={{ height: 45 }}>
-          <div className="col-lg-6 text-center text-lg-start mb-lg-0">
-            <div className="d-flex flex-wrap">
-              <Link to="#" className="text-muted me-4">
-                <i className="fas fa-map-marker-alt text-sky me-2" />
-                Find A Location
-              </Link>
-              <Link to="tel:+01234567890" className="text-muted me-4">
-                <i className="fas fa-phone-alt text-sky me-2" />
-                +01234567890
-              </Link>
-              <Link to="mailto:example@gmail.com" className="text-muted me-0">
-                <i className="fas fa-envelope text-sky me-2" />
-                Example@gmail.com
-              </Link>
+      {/* Topbar Start */}
+      <div className="container-fluid topbar bg-secondary d-none d-xl-block w-100">
+        <div className="container">
+          <div className="row gx-0 align-items-center" style={{ height: 45 }}>
+            <div className="col-lg-6 text-center text-lg-start mb-lg-0">
+              <div className="d-flex flex-wrap">
+                <Link to="#" className="text-white me-4">
+                  <i className="fas fa-map-marker-alt text-sky me-2" />
+                  Find A Location
+                </Link>
+                <Link to="tel:+01234567890" className="text-white me-4">
+                  <i className="fas fa-phone-alt text-sky me-2" />
+                  +01234567890
+                </Link>
+                <Link to="mailto:example@gmail.com" className="text-white me-0">
+                  <i className="fas fa-envelope text-sky me-2" />
+                  Example@gmail.com
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="col-lg-6 text-center text-lg-end">
-            <div className="d-flex align-items-center justify-content-end">
-              <Link
-                to="#"
-                className="btn  btn-sm-square rounded-circle me-3"
-              >
-                <i className="fab fa-facebook-f" />
-              </Link>
-              <Link
-                to="#"
-                className="btn  btn-sm-square rounded-circle me-3"
-              >
-                <i className="fab fa-twitter" />
-              </Link>
-              <Link
-                to="#"
-                className="btn  btn-sm-square rounded-circle me-3"
-              >
-                <i className="fab fa-instagram" />
-              </Link>
-              <Link
-                to="#"
-                className="btn  btn-sm-square rounded-circle me-0"
-              >
-                <i className="fab fa-linkedin-in" />
-              </Link>
+            <div className="col-lg-6 text-center text-lg-end">
+              <div className="d-flex align-items-center justify-content-end">
+                <Link to="#" className="btn  btn-sm-square rounded-circle me-3">
+                  <i className="fab fa-facebook-f" />
+                </Link>
+                <Link to="#" className="btn  btn-sm-square rounded-circle me-3">
+                  <i className="fab fa-twitter" />
+                </Link>
+                <Link to="#" className="btn  btn-sm-square rounded-circle me-3">
+                  <i className="fab fa-instagram" />
+                </Link>
+                <Link to="#" className="btn  btn-sm-square rounded-circle me-0">
+                  <i className="fab fa-linkedin-in" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    {/* Topbar End */}
-    {/* Navbar & Hero Start */}
-    <div className="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0 bg-secondary  custom-border">
+      {/* Topbar End */}
+      {/* Navbar & Hero Start */}
+      <div className="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0 bg-secondary  custom-border">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
             <Link to="/" className=" p-0">
-            
-            <div className="logo_container ">
-							<a href="#">
-								<div className="logo_content  d-flex flex-column align-items-start justify-content-center">
-									
-								<div className="p-2 btn">	<img src="/public/img/logo.png"/></div>
-								</div>
-							</a>
-						</div>
-                          
+              <div className="logo_container ">
+                <a href="#">
+                  <div className="logo_content  d-flex flex-column align-items-start justify-content-center">
+                    <div className="p-2 btn">
+                      {" "}
+                      <img src="/public/img/logo.png" />
+                    </div>
+                  </div>
+                </a>
+              </div>
             </Link>
             <button
               className="navbar-toggler"
@@ -150,14 +138,18 @@ function Header() {
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav mx-auto py-0">
                 <Link
-                  to="/cars"
-                  className={`nav-item nav-link ${location.pathname === "/cars" ? "active" : ""}`}
+                  to="/allcars"
+                  className={`nav-item nav-link ${
+                    location.pathname === "/cars" ? "active" : ""
+                  }`}
                 >
                   Car
                 </Link>
                 <Link
-                  to="/bikes"
-                  className={`nav-item nav-link ${location.pathname === "/bikes" ? "active" : ""}`}
+                  to="/allbikes"
+                  className={`nav-item nav-link ${
+                    location.pathname === "/allbikes" ? "active" : ""
+                  }`}
                 >
                   Bike
                 </Link>
@@ -166,34 +158,44 @@ function Header() {
                 </a>
                 <Link
                   to="/insurance"
-                  className={`nav-item nav-link ${location.pathname === "/insurance" ? "active" : ""}`}
+                  className={`nav-item nav-link ${
+                    location.pathname === "/insurance" ? "active" : ""
+                  }`}
                 >
                   Insurance
                 </Link>
                 <div className="nav-item dropdown">
-                  <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                  <a
+                    href="#"
+                    className="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                  >
                     Service
                   </a>
                   <div className="dropdown-menu m-0">
                     <Link
                       to="/accessories"
-                      className={`dropdown-item ${location.pathname === "/accessories" ? "active" : ""}`}
+                      className={`dropdown-item ${
+                        location.pathname === "/accessories" ? "active" : ""
+                      }`}
                     >
                       Accessories
                     </Link>
                     <Link
                       to="/repair"
-                      className={`dropdown-item ${location.pathname === "/repair" ? "active" : ""}`}
+                      className={`dropdown-item ${
+                        location.pathname === "/repair" ? "active" : ""
+                      }`}
                     >
                       Repair
                     </Link>
-                  
-                 
                   </div>
                 </div>
                 <Link
                   to="/contact"
-                  className={`nav-item nav-link ${location.pathname === "/contact" ? "active" : ""}`}
+                  className={`nav-item nav-link ${
+                    location.pathname === "/contact" ? "active" : ""
+                  }`}
                 >
                   Contact
                 </Link>
@@ -211,11 +213,10 @@ function Header() {
           </nav>
         </div>
       </div>
-    {/* Navbar & Hero End */}
+      {/* Navbar & Hero End */}
 
-
-       {/* Search Modal */}
-       <div
+      {/* Search Modal */}
+      <div
         className="modal fade"
         id="searchModal"
         tabIndex={-1}
@@ -226,7 +227,10 @@ function Header() {
         <div className="modal-dialog modal-xl">
           <div className="modal-content image-border rounded-0 bg-secondary">
             <div className="modal-header">
-              <h4 className="modal-title text-white mb-0" id="exampleModalLabel">
+              <h4
+                className="modal-title text-white mb-0"
+                id="exampleModalLabel"
+              >
                 Select Area
               </h4>
               <button
@@ -234,12 +238,15 @@ function Header() {
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                style={{filter: 'invert(1)'}}
+                style={{ filter: "invert(1)" }}
               />
             </div>
             <div className="modal-body">
               <div className="input-group mx-auto d-flex">
-                <div className="d-flex align-items-center" style={{ position: "relative", width: "100%" }}>
+                <div
+                  className="d-flex align-items-center"
+                  style={{ position: "relative", width: "100%" }}
+                >
                   <select
                     className="form-select p-2"
                     value={localSelectedArea}
@@ -248,10 +255,12 @@ function Header() {
                       background: "#fff",
                       borderColor: "#fff",
                       width: "100%",
-                      paddingRight: "40px", // Add padding to the right to make space for the icon
+                      paddingRight: "40px",
                     }}
                   >
-                    <option value="" disabled>Select Area</option>
+                    <option value="" disabled>
+                      Select Area
+                    </option>
                     {staticAreas.map((area, index) => (
                       <option key={index} value={area.toLowerCase()}>
                         {capitalizeFirstLetter(area)}
@@ -262,8 +271,8 @@ function Header() {
                     style={{
                       color: "#5b1188",
                       position: "absolute",
-                      right: "10px", // Position the icon inside the select box on the right side
-                      pointerEvents: "none", // Make sure the icon does not interfere with the dropdown interaction
+                      right: "10px",
+                      pointerEvents: "none",
                     }}
                   />
                 </div>
@@ -285,7 +294,9 @@ function Header() {
                             className="bwc__sc-ttnkwg-26 izPSOY"
                           />
                         </div>
-                        <span className="bwc__sc-ttnkwg-16 dizuyr">{capitalizeFirstLetter(city)}</span>
+                        <span className="bwc__sc-ttnkwg-16 dizuyr">
+                          {capitalizeFirstLetter(city)}
+                        </span>
                       </div>
                     </li>
                   ))}
@@ -321,9 +332,8 @@ function Header() {
           </div>
         </div>
       </div>
-  </>
-  
-  )
+    </>
+  );
 }
 
-export default Header
+export default Header;

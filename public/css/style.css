@@ -160,29 +160,62 @@
     color: var(--bs-white);
 }
 
+/* Submenu Hover */
+.navbar .nav-item .dropdown-submenu:hover > .dropdown_menu {
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown-submenu {
+    position: relative;
+}
+/* Submenu Positioning */
+.dropdown-submenu > .dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 100%; /* This moves the submenu to the right side of the parent */
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #6e7684;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 10px;
+
+}
+
+
+.dropdown-submenu:hover > .dropdown_menu {
+    display: block;
+}
+
+/* Main Dropdown Hover */
 .navbar .nav-item:hover .dropdown-menu {
     transform: rotateX(0deg);
     visibility: visible;
     margin-top: 8px !important;
     background: var(--bs-light);
-    transition: .5s;
+    transition: 0.5s;
     opacity: 1;
 }
 
-
-
+/* Navbar collapse responsiveness */
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
-    display: block;
-    visibility: hidden;
-    top: 100%;
-    transform: rotateX(-75deg);
-    transform-origin: 0% 0%;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 8px !important;
-    transition: .5s;
-    opacity: 0;
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        border: 0;
+        border-radius: 10px;
+        margin-top: 8px !important;
+        transition: 0.5s;
+        opacity: 0;
     }
 }
 
@@ -264,12 +297,24 @@
     padding: 60px 0 60px 0;
     transition: 0.5s;
 }
+.bg-breadcrumbloan {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(31, 46, 78, 0.3), rgba(0, 12, 33, 0.5)), url(../img/loanbg.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0 60px 0;
+    transition: 0.5s;
+}
 
-.bg-breadcrumb .breadcrumb {
+.bg-breadcrumb .breadcrumb ,
+.bg-breadcrumbloan .breadcrumb{
     position: relative;
 }
 
-.bg-breadcrumb .breadcrumb .breadcrumb-item a {
+.bg-breadcrumb .breadcrumb .breadcrumb-item a,
+.bg-breadcrumbloan .breadcrumb .breadcrumb-item a {
     color: var(--bs-white);
 }
 /*** Single Page Hero Header End ***/

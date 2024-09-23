@@ -110,7 +110,7 @@ function CategoriesSlider() {
                   </div>
                 </div>
                 <Link
-                  to='/car-details'
+                  to='/allcars'
                   className="btn  rounded-pill d-flex justify-content-center py-3"
                 >
                   See More
